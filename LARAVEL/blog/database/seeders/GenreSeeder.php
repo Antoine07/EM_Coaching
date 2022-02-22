@@ -17,5 +17,16 @@ class GenreSeeder extends Seeder
     {
         //Créez les genres php mysql et mongodb
         // lancez la commande php artisan db:seed
+        DB::table('genres')->insert([
+            'name' => "php"
+        ]);
+
+        DB::table('genres')->insert([
+            'name' => "mysql"
+        ]);
+
+        DB::table('genres')->insert([
+            'name' => "mongodb"
+        ]);
     }
 }
