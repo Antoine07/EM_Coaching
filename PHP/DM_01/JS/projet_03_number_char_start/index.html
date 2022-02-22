@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 1 : Nombre de caractères</title>
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+
+        .result {
+            color: palevioletred;
+            padding: 3px;
+        }
+
+        .warning {
+            color: purple;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Nombre de caractères</h1>
+    <p>Formulaire de saisie</p>
+    <div class="form">
+        <label for="phrase">Votre phrase : </label>
+        <input type="text" id="phrase" class="phrase">
+        <input type="submit" value="Calculer" class="submitPhrase">
+    </div>
+    <div></div>
+        <p class="numberWord"></p>
+    </div>
+    <script>
+        // les variables qui sont définies à l'extérieur du script sont globales
+        // les fonctions peuvent y accéder
+        let elInput = document.querySelector('.phrase');
+        let numberW = document.querySelector('.numberWord');
+        let calInput = document.querySelector('.submitPhrase');
+        let content = { text : '', nb : 0 }; // portée globale au script 
+
+        // une fonction de callback que l'on passera à addEventListener
+        function eventInput(event) {
+            let value = event.target.value;
+            content.text = value;
+            content.nb = value.length;
+        }
+
+        // On écoute les changement des inputs, eventInput une fonction de callback
+        elInput.addEventListener('input', eventInput);
+
+        calInput.addEventListener('click', function(event){
+            const text = content.text ;
+            const nb = content.nb;
+            numberW.innerHTML = `TEXT : ${text}, LONGUEUR : ${nb}`;
+        })
+    </script>
+</body>
+
+</html>

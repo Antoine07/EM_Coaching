@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        Exercice
+        Faites un algorithme qui détermine le plus grand élément d'un tableau de valeurs.
+
+        const data = [
+        11, 16,100,9,7,8,19, 2, 10
+        ];
+    </p>
+    <div id="root"></div>
+    <script>
+        const data = [
+            11, 16,100,9,7,8,19, 2, 10
+        ];
+       let candidate = data.shift(); // dépile le premier élément
+       
+       for(const number of data){
+           if(number > candidate){
+               candidate = number;
+           }
+       }
+       console.log('candidate', candidate);
+       const root = document.getElementById('root');
+       root.innerHTML = candidate;
+    </script>
+</body>
+
+</html>

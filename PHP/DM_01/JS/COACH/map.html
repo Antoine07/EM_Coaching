@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<p>Exercice 01</p>
+<p>Soit le tableau de valeurs suivants : <br />
+    const numbers = [11,2, 8,19, 20];
+</p>
+<p>Mettre les valeurs paires à la puissance 3 et les valeurs impairs à la puisse 2, utilisez la méthode map sur un
+    tableau.</p>
+    <p>Exercice 02</p>
+    <p>Soit le tableau de valeurs suivants : <br />
+        const notes = [[10, 12],[ 11, 100,9],[ 20, 30]];
+    </p>
+    <p>
+        Retournez un tableau d'une dimension en faisant la somme de chaque sous tableau.
+        On devrait avoir [22, 120, 50]
+    </p>
+    <p>Exercice 03</p>
+    <p>Soit le tableau de valeurs suivants : <br />
+        const prices = [100, 289, 100];
+    </p>
+    <p>
+       1. retournez le tableau des prix augmentés de 10%
+    </p>
+    <p>
+        2. Créez une fonction qui permet de définir une augmentation pour tableau de price.
+     </p>
+<body>
+    <script>
+        // Exemple
+        const exNumbers = [11, 2, 8, 19, 20];
+        // map parcourt l'ensemble des valeurs du tableau et élève chaque valeur à la puissance 2, attention map crée un nouveau tableau
+        const exPowerNumbers = exNumbers.map(function (num) {
+
+            return num ** 2;
+        });
+        console.log(exPowerNumbers);
+
+        // 01 Exercice 
+        const numbers = [11,2, 8,19, 20];
+        const pNumbers = numbers.map(function(num){
+            // lorsque tu as une seule chose à retourner les accolades sont facultatives
+            if(num % 2)
+                return num**2;
+
+            return num**3 ;
+        });
+
+        const notes = [[10, 12],[ 11, 100, 9],[ 20, 30]];
+
+        const sumNotes = notes.map(function(n){
+            let total = 0;
+            for(const num of n){
+                total += num;
+            }
+
+            return total;
+        });
+
+        console.log(sumNotes);
+
+        // exercice 3
+        const prices = [100, 289, 100];
+
+        const newPrices = prices.map(function(price){
+
+            return Math.floor( price * 1.1 * 10 ) /10 ;
+        });
+
+        console.log(newPrices);
+
+        function augmentationPrice(prices, per){
+            
+        }
+    </script>
+</body>
+
+</html>

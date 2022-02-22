@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>
+        plus vous saurez regarder loin dans le passé plus vous verrez loin dans le futur
+    </h3>
+    <script>
+
+        const secret_key = "MULTIMEDIA",
+            message = "plus vous saurez regarder loin dans le passé plus vous verrez loin dans le futur";
+        let message_crypted = message.toUpperCase();
+
+        let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let alphabet_crypted = "";
+        for (let j = 0; j < secret_key.length; j++) {
+            let letter = secret_key.charAt(j);
+
+            if (!alphabet_crypted.includes(letter)) {
+                alphabet_crypted += letter;
+                alphabet = alphabet.replace(letter, '');
+            }
+        }
+
+        alphabet_crypted += alphabet;
+        console.log(alphabet_crypted);
+
+        // on initialise l'alphabet pour qu'il est de nouveau 26 lettres
+        alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        // TODO coder le é majuscule en crypté
+        for (let i = 0; i < message_crypted.length; i++) {
+            const letter_clear = alphabet[i];
+            const pos = alphabet.indexOf(letter_clear);
+            const letter_cryp = alphabet_crypted.charAt(pos).toLowerCase() ; // minuscule => c'est fait et plus à faire
+            console.log(letter_clear, '-->', letter_cryp);
+            message_crypted = message_crypted.replaceAll(letter_clear, letter_cryp);
+        }
+
+        document.write(`<h3>${message_crypted.toUpperCase()}</h3>`); //the result is wrong...what went wrong?
+    </script>
+
+</body>
+
+</html>

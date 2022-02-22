@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .red > li {
+        color : red;
+    }
+</style>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        // DOM
+        const root = document.getElementById('root');
+        // création du ul
+        const ul = document.createElement('ul');
+        // on crée une classe sur le ul
+        ul.classList.add("red");
+
+        const sequences = [0.918191819189, 0.160000101010, 0.24300384800881147];
+        const goodSequence61 = [];
+        for(const sequence of sequences){
+
+            // on a transf
+            const letters = sequence.toString().split('').filter(function(ch){
+                return ch != '.'; 
+            });
+            console.log(letters);
+            // reduce permet ici de faire la somme des valeurs se trouvant dans le tableau sequence
+            const sum = letters.reduce(function(acc, curr){
+                // acc = acc + curr ;
+                return parseInt(acc) + parseInt(curr);
+            });
+
+            console.log(sum);
+            // '1'== 1 vrai, '1' === 1 faux 
+            if(sum === 61 ){
+                goodSequence61.push(sequence);
+            }
+        }
+
+        // on parcourt les bonnes données
+        for(const good of goodSequence61){
+            // création des lis pour mettre les valeurs recherchées
+            let li = document.createElement('li');
+            li.innerHTML = good ;
+            // on appendChild le li
+            ul.appendChild(li);
+            console.log(ul);
+        }
+
+        // on n'oublie pas d'ajouter ul dans root
+        root.appendChild(ul);
+    </script>
+</body>
+</html>

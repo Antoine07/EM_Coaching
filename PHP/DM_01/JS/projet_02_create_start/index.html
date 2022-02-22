@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 1 : Nombre de caractères</title>
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+
+        .result {
+            color: white;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Listes nombres</h1>
+    <ul id="numbers"></ul>
+    <script>
+        let container = document.getElementById('numbers');
+        const alphabets = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split('');
+        /*
+        // première correction
+        let count = 1;
+        for (const alphabet of alphabets) {
+            // création d'un élément HTML
+            let li = document.createElement('li');
+            // ${} dans une chaîne de caractères avec des cotes couchés permet d'évaluer la valeur d'une variable 
+            li.innerHTML = `${alphabet}=<span>${count}</span>`;
+            // ajout dans l'arbre des éléments HTML d'un élément créé dynamiquement.
+            container.appendChild(li);
+            count += 1;
+        }
+        */
+
+        // deuxième correction
+        for(let i = 0; i < alphabets.length; i= i + 1){
+            let li = document.createElement('li');
+            li.innerHTML = `${alphabets[i]}=<span>${i+1}</span>`;
+            container.appendChild(li);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        Exercise
+        écrire une fonction qui calcule le maximun de trois valeurs, vous appelerez cette fonction max3(a,b,c).
+        Affichez le max dans le DOM.
+    </p>
+    <div id="root"></div>
+    <script>
+        let a = 7,
+            b = 8,
+            c = 4,
+            d = 7;
+
+        // algo 
+        function max_val(a, b) {
+            if (a > b) {
+                return a;
+            }
+
+            return b;
+        }
+
+        const m = max_val(a, max_val(b, max_val(c, d)));
+
+        console.log(m);
+    </script>
+</body>
+
+</html>

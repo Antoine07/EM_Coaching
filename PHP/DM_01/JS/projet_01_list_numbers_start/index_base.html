@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <title>Exercice 1 : Nombre de caractères</title>
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+
+        .result {
+            color: white;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Listes nombres</h1>
+    <ul class="numbers">
+        <li>A=<span>1</span></li>
+        <li>B=<span>2</span></li>
+        <li>C=<span>3</span></li>
+        <li>D=<span>4</span></li>
+        <li>E=<span>5</span></li>
+        <li>F=<span>6</span></li>
+        <li>G=<span>7</span></li>
+        <li>H=<span>8</span></li>
+    </ul>
+
+    <script>
+        // document c'est le point d'entrée du document DOM pour JS
+        let els = document.querySelectorAll('.numbers > li'); // un tableau des li
+        console.log(els[0]);
+
+        let a = 1;
+        let b = 3;
+        let tmp;
+        console.log('a,', a, 'b', b);
+        tmp = a;
+        a = b;
+        b = tmp;
+        console.log('a,', a, 'b', b);
+        // syntaxe moderne
+        [a, b] = [b, a];
+        console.log('a,', a, 'b', b);
+
+        console.log(els[0].querySelector('span').innerHTML);
+        // Exercice inversez respectivement l'ordre des valeurs dans les span
+        // 1 2 3 -> 3 2 1
+
+        // [
+        //     els[0].querySelector('span').innerHTML,
+        //     els[1].querySelector('span').innerHTML,
+        //     els[2].querySelector('span').innerHTML,
+        // ] = [
+        //     els[2].querySelector('span').innerHTML,
+        //     els[1].querySelector('span').innerHTML,
+        //     els[0].querySelector('span').innerHTML,
+        // ]
+
+        // dynamique 
+        for (let i = 0; i < els.length; i++) {
+            els[i].querySelector('span').innerHTML = els.length - i ;
+        }
+    </script>
+</body>
+
+</html>

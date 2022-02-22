@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const letter = ["G", "B"]
+        const letter_voy = ["a", "e", "i", "o", "u"]
+        const letter_con = ["G", "B", "L", "N"]
+
+        const nb_gobelin = 10;
+        let gobelins = {};
+        for (let i = 0; i < nb_gobelin; i++) {
+
+            let gobelin = {
+                age: Math.floor(Math.random() * (35 - 5 + 1)) + 5,
+                sex: Math.random() < 0.58 ? "M" : "F",
+                Tooth: Math.floor(Math.random() * (28 - 17 + 1)) + 17,
+
+            }
+            let j = Math.floor(Math.random() * 5);
+            let name = (Math.random() < 0.5 ? "G" : "B") + letter_voy[j];
+            
+            // On détermine le nombre de syllabe(s) possible(s) de 1 à 3 max
+            // On décrémente les valeurs de syllabes pour les créer effectivement
+            let maxSyllabe = Math.floor(Math.random() * 3) + 1;
+
+            // construction des syllabes
+            let syllabe = '';
+            let m = Math.floor(Math.random() * 5); // indice du tableau entre 0, 4
+            let l = Math.floor(Math.random() * 4); // indice du tableau entre 0, 3
+
+            // on a déterminé le nombre de syllabe(s) que l'on souhaite avoir plus haut
+            // par exemple maxSyllabe = 3
+            // 1. maxSyllabe = 3 > 0 TRUE
+            // 2. maxSyllabe = 2 > 0 TRUE
+            // 3. maxSyllabe = 1 > 0 TRUE
+            // 4. maxSyllabe = 0 > 0 FALSE on rentre plus dans la boucle
+            while( maxSyllabe > 0 ){
+                // on crée une syllabe
+                syllabe = syllabe +  letter_con[l] +  letter_voy[m]; // deux lettres 
+                maxSyllabe--; // On décrémente le nombre maxSyllabe à chaque fois que l'on a créé une syllabe
+            }
+
+            name = name + syllabe;
+            // on l'ajoute enfin de le tableau
+            gobelins[name] = gobelin;
+        }
+        console.log(gobelins);
+
+    </script>
+</body>
+
+</html>
