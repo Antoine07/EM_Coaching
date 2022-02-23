@@ -25,5 +25,9 @@ class BookSeeder extends Seeder
             // 'chapitre' => varchar::random(100),
         ]);
 
+    // On utilise le modèle pour les seeders
+    // $book  
+    // print_r(Genre::all());
+
     }
 }

@@ -41,5 +41,8 @@ class GenreSeeder extends Seeder
         $genre = new Genre;
         $genre->name = "MongoDB";
         $genre->save();
+
+        // dans Genre on des livres 
+        // $genre->books; // pour afficher tous les livres associés à un genre
     }
 }
