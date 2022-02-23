@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Genre;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -17,16 +18,28 @@ class GenreSeeder extends Seeder
     {
         //Créez les genres php mysql et mongodb
         // lancez la commande php artisan db:seed
-        DB::table('genres')->insert([
-            'name' => "php"
-        ]);
+        // DB::table('genres')->insert([
+        //     'name' => "php"
+        // ]);
 
-        DB::table('genres')->insert([
-            'name' => "mysql"
-        ]);
+        // DB::table('genres')->insert([
+        //     'name' => "mysql"
+        // ]);
 
-        DB::table('genres')->insert([
-            'name' => "mongodb"
-        ]);
+        // DB::table('genres')->insert([
+        //     'name' => "mongodb"
+        // ]);
+
+        $genre = new Genre;
+        $genre->name = "PHP";
+        $genre->save();
+
+        $genre = new Genre;
+        $genre->name = "MySQL";
+        $genre->save();
+
+        $genre = new Genre;
+        $genre->name = "MongoDB";
+        $genre->save();
     }
 }
