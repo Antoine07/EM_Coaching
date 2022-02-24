@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             GenreSeeder::class, // créer les genres avant les books logique !!!
             BookSeeder::class,
+            AuthorSeeder::class
         ]);
         // \App\Models\User::factory(10)->create();
     }
