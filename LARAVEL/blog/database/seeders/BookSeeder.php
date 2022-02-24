@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-
 class BookSeeder extends Seeder
 {
     /**
@@ -31,17 +30,22 @@ class BookSeeder extends Seeder
         // $book  
         // print_r(Genre::all());
 
+        $genrePhp = Genre::where('name', 'php')->firstOrFail();
+
         $book = new Book();
 
-        $book->title = Str::random(10);
+        $book->title = "PHP avancé";
         $book->description = Str::random(1000);
         $book->published_at = new \DateTime;
+
+        // associer le livre au genre php
+        $book->genre()->associate($genrePhp);
 
         $book->save();
 
         $book = new Book();
 
-        $book->title = Str::random(10);
+        $book->title = "Programmer avec MySQL";
         $book->description = Str::random(1000);
         $book->published_at = new \DateTime;
 
