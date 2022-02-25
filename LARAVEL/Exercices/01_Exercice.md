@@ -14,10 +14,18 @@
 
 Créez un faker pour les auteurs à l'aide de la commande suivante 
 
-```php
+```bash
 php artisan make:factory AuthorFactory
 ```
 
 Puis dans le seeder AuthorSeeder créez 10 auteurs. 
 
 Indications : regardez dans la correction dans BookSeeder et BookFactory comment on a mis en place les factories pour ces entités.
+
+Relancez les commandes habituelles 
+
+```bash
+php artisan migrate:refresh
+php artisan db:seed
+```
+
