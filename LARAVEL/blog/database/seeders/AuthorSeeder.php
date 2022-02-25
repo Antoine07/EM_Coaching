@@ -14,6 +14,8 @@ class AuthorSeeder extends Seeder
      */
     public function run()
     {
+        Author::factory()->count(10)->create();
+
         $author = new Author();
         $author->name = "Tarek";
         $author->email = "tarek@tarek.com";

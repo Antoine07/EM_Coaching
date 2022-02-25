@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Author;
 
 class Book extends Model
 {
@@ -18,7 +18,7 @@ class Book extends Model
 
     public function authors()
     {
-        return $this->hasMany(Auth::class);
+        return $this->belongsToMany(Author::class);
     }
 
     public function manager()

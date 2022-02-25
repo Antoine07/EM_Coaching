@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Author;
 use App\Models\Book;
 use App\Models\Genre;
 use Database\Factories\BookFactory;
@@ -66,9 +67,30 @@ class BookSeeder extends Seeder
         //     $book->genre()->associate($genre); // associe au genre
         //     // dump($genre);
         //     $book->save(); // sauvegarde => créer en base de données
-        // }
+        // }    
+
+        // variables du contexte
+        $authors = Author::all();
+        $genres = Genre::all();
+
+        $countGenre = count($genres);
+        $countAuthor = count($authors);
+            
+
+        // dump(count($genres));
 
         // Factory 
-        Book::factory()->count(50)->create();
+        // use avec une fonction anomyme permet d'accéder aux variables du contexte
+        Book::factory()
+            ->count(10)
+            ->create()
+            ->each(function ($book) use ($authors, $genres, $countAuthor, $countGenre) {
+                // dump($authors);
+                // dump($genres);
+                // on va de 0 au nombre d'éléments dans le tableau
+                $book->genre()->associate($genres[random_int(0, $countGenre - 1)]);
+                
+                $book->save();
+            });
     }
 }

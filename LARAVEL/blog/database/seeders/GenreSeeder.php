@@ -29,7 +29,7 @@ class GenreSeeder extends Seeder
         // DB::table('genres')->insert([
         //     'name' => "mongodb"
         // ]);
-
+        
         $genre = new Genre;
         $genre->name = "PHP";
         $genre->save();
