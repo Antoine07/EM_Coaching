@@ -75,9 +75,15 @@ class BookSeeder extends Seeder
 
         $countGenre = count($genres);
         $countAuthor = count($authors);
-            
+
 
         // dump(count($genres));
+        /*
+            Kevin peut boire plusieurs cafés mais chaque café est bu par une personne
+            hasMany belongsTo
+            Kevin peut lire plusieurs livres, et chaque livre peut etre lu par plusieurs personnes
+            belongsToMany des deux côtés 
+        */
 
         // Factory 
         // use avec une fonction anomyme permet d'accéder aux variables du contexte
