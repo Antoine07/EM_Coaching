@@ -11,6 +11,7 @@ class HomeController extends Controller
     {   //select * from books
         // return Book::all();
 
+        // la méthode view permet d'injecter des données à la vue
         return view("home.index", ['books' => Book::all()]);
     }
 }
