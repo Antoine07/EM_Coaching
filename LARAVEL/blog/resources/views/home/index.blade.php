@@ -9,6 +9,9 @@
 <body>
 @foreach ($books as $book)
     <p>This is book {{ $book->title }}</p>
+    {{-- ICI affichez les auteurs des livres, vérifiez qu'ils existent avant --}}
+    {{-- Faire un foreach Laravel pour afficher --}}
+    {{ dump($book->authors()->count() )}}
 @endforeach
 </body>
 </html>

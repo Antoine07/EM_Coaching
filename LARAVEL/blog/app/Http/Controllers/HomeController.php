@@ -9,6 +9,8 @@ class HomeController extends Controller
 {
     public function index()
     {   //select * from books
-        return Book::all();
+        // return Book::all();
+
+        return view("home.index", ['books' => Book::all()]);
     }
 }
