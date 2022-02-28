@@ -71,7 +71,7 @@ class BookSeeder extends Seeder
 
         // variables du contexte
         $authors = Author::all();
-        $genres = Genre::all();
+        $genres = Genre::all("id");
 
         $countGenre = count($genres);
         $countAuthor = count($authors);
@@ -95,7 +95,19 @@ class BookSeeder extends Seeder
                 // dump($genres);
                 // on va de 0 au nombre d'éléments dans le tableau
                 $book->genre()->associate($genres[random_int(0, $countGenre - 1)]);
-                
+                // COURAGE !!!
+                $rand = random_int(2, $countAuthor);
+                // On utilise la collection = méthodes Laravel pour traiter les entités comme des tableaux 
+                // shuffle mélange le tableau d'entités, slice permet de découper de manière aléatoire ici 
+                $authorsShuffle = $authors->shuffle()->slice($rand);
+
+                // Pour la méthode attach nous devons passer des ids sous forme d'un tableau
+                $ids = [] ;
+                foreach($authorsShuffle as $k => $array){
+                    $ids[] = $array["id"];
+                }
+                $book->authors()->attach($ids);
+
                 $book->save();
             });
     }
