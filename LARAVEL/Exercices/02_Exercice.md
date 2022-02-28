@@ -4,6 +4,16 @@ Une fois que l'on a mis les valeurs dans les tables, nous allons passés par les
 
 https://laravel.com/docs/5.1/blade#displaying-data
 
-## 01 Exercice 
+## 01 Exercice books page home
 
 Vous allez afficher les livres en page d'accueil en donnant le nom de chaque auteur.
+
+## 02 Exercice page d'un livre
+
+Créez la vue pour une page donnée.
+
+- Créez la route pour la page.
+
+- Créez la méthode pour servir cette page.
+
+- Créez la vue pour afficher le livre.
