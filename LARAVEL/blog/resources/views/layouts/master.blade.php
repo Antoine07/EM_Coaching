@@ -14,6 +14,9 @@
             @show
             </div>
             <div class="col">
+                <nav>
+                    <a href="{{ route('home') }}">Home</a>
+                </nav>
             @yield('content')
             </div>
         </div>
