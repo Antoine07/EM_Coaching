@@ -15,12 +15,12 @@ use App\Http\Controllers\HomeController;
 
 // on a branché la route home sur la méthode index du controleur (classe) HomeController.
 // dans les vues pour créer les liens route('melissa')
-Route::get('/home', [HomeController::class, 'index'])->name('melissa');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // route dynamique book/8 book/1 => pour récupérer l'idée book
 // vous pouvez faire du binding avec le modèle id => instance de la classe Book
 // les routes sont avec paramètre (id du livre à afficher )
-Route::get('/book/{book}', [HomeController::class, 'showBook'])->name('sarah');
+Route::get('/book/{book}', [HomeController::class, 'showBook'])->name('book');
 
 Route::get('/', function () {
     return view('welcome');

@@ -12,7 +12,7 @@ class HomeController extends Controller
         // return Book::all();
 
         // la méthode view permet d'injecter des données à la vue
-        return view("home.index", ['books' => Book::all()]);
+        return view("home.index", ["books" => Book::all()]);
     }
 
     // 1 METHODE)  affichez le détail d'un livre
@@ -22,6 +22,7 @@ class HomeController extends Controller
     
     // 2 METHOD) BINDING de MODEL instance de book est faite par Laravel directement, il est capable de récupérer l'id dans la route et de faire l'instance du de la classe Booo
     public function showBook(Book $book){
-        return $book;
+        
+        return view("home.single", ["book" => $book]);
     }
 }

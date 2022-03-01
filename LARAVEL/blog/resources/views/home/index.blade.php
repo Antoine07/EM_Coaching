@@ -3,7 +3,7 @@
 @section('content')
 @foreach ($books as $book)
 {{-- Rendre cliquable le titre suivant $book->id --}}
-<p>This is book {{ $book->title }}</p>
+<p>This is book <a href="{{route('book', $book)}}">{{ $book->title }}</a></p>
 {{-- ICI affichez les noms auteurs des livres, vérifiez qu'ils existent avant --}}
 {{-- Faire un foreach Laravel pour afficher --}}
 @if( $book->authors()->count() > 0 )
@@ -20,4 +20,9 @@
     @endforelse
 </ul>
 @endforeach
+@endsection
+
+@section('sidebar')
+@parent
+<nav>Menu secondaire</nav>
 @endsection

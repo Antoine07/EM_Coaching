@@ -17,3 +17,9 @@ Créez la vue pour une page donnée.
 - Créez la méthode pour servir cette page.
 
 - Créez la vue pour afficher le livre.
+
+## 03 Exercice page livre détails
+
+1. Affichez les auteurs dans la page du livre elle-même.
+
+2. Trouvez comment formater la date de publication du livre.
