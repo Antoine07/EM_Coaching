@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Author;
 use App\Models\Book;
+
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -24,5 +26,10 @@ class HomeController extends Controller
     public function showBook(Book $book){
         
         return view("home.single", ["book" => $book]);
+    }
+
+    public function showAuthor(Author $author){
+
+        return view("author.single", ["author" => $author]);
     }
 }

@@ -21,6 +21,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 // vous pouvez faire du binding avec le modèle id => instance de la classe Book
 // les routes sont avec paramètre (id du livre à afficher )
 Route::get('/book/{book}', [HomeController::class, 'showBook'])->name('book');
+Route::get('/author/{author}', [HomeController::class, 'showAuthor'])->name('author');
 
 Route::get('/', function () {
     return view('welcome');

@@ -13,8 +13,7 @@
 <ul>
     {{-- Vous pouvez soit écrire $book->authors()->get() soit écrire $book->authors pour récupérer les auteurs dans un itérable --}}
     @forelse ($book->authors as $author)
-    <li>{{ $author->name }}</li>
-    <p>----------------------</p>
+    <li><a href="{{route('author', $author) }}">{{ $author->name }}</a></li>
     @empty
     <li>No author</li>
     @endforelse
