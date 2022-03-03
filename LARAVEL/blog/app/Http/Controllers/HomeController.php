@@ -14,7 +14,8 @@ class HomeController extends Controller
         // return Book::all();
 
         // la méthode view permet d'injecter des données à la vue
-        return view("home.index", ["books" => Book::all()]);
+        $books = Book::all();
+        return view("home.index", ["books" =>$books, 'count' => count($books)]);
     }
 
     // 1 METHODE)  affichez le détail d'un livre
@@ -32,4 +33,5 @@ class HomeController extends Controller
 
         return view("author.single", ["author" => $author]);
     }
+
 }
