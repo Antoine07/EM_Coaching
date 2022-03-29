@@ -23,6 +23,8 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/book/{book}', [HomeController::class, 'showBook'])->name('book');
 Route::get('/author/{author}', [HomeController::class, 'showAuthor'])->name('author');
 
+Route::get('/sex/{name}', [HomeController::class, 'showSex'])->name('sex');
+
 Route::get('/', function () {
     return view('welcome');
 });

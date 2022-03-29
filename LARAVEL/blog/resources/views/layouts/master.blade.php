@@ -7,6 +7,7 @@
 
 <body>
     <div class="container">
+        @include('partials.menu')
         <div class="row">
             <div class="col">
             @section('sidebar')

@@ -34,4 +34,6 @@ class HomeController extends Controller
         return view("author.single", ["author" => $author]);
     }
 
+  
+
 }
