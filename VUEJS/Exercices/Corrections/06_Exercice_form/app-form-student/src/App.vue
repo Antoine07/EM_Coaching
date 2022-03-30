@@ -12,8 +12,8 @@ function add(e){
 </script>
 
 <template>
-  <AddStudent @addStudent="add" title="Add student" />
-  <AddStudent @addStudent="add" title="Add student" />
+  <AddStudent @add-student="add" title="Add student" />
+  <AddStudent @add-student="add" title="Add student" />
   <ul v-if="students.length > 0">
     <li v-for="st in students"> Name: {{st.name}} Age: {{ st.age }} </li>
   </ul>

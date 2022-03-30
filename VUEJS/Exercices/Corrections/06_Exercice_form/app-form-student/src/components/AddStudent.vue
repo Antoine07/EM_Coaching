@@ -9,13 +9,13 @@ const age = ref('')
 const props = defineProps(['title']);
 
 // fait remonter un état on définit une clé pour faire remonter l'état emit au parent
-const emit = defineEmits(['addStudent'])
+const emit = defineEmits(['add-student'])
 
 function checkForm(e){
 	e.preventDefault()
 
-	// envoie des data à un parent @addStudent dans le parent <=> liaison
-	emit('addStudent', {name: name.value, age: age.value} )
+	// envoie des data à un parent @add-student dans le parent <=> liaison
+	emit('add-student', {name: name.value, age: age.value} )
 
 	name.value = ''
 	age.value = ''
