@@ -3,7 +3,7 @@
   Posts
   {{ posts }}
    <ul>
-      <li v-for="post in posts"><router-link  to="/post/{{post.id}}" >{{post.title}}</router-link></li>
+      <li v-for="post in posts"><router-link  :to="{path : '/post/' + post.id , query : { ...post }}" >{{ post.title }}</router-link></li>
    </ul>
    </div>
 </template>
@@ -13,11 +13,16 @@ import { ref } from 'vue';
 
 const posts = ref(
 [
- { id: 1, title : "MongoDB", description : "blabla", text: "un texte plus long" },
-    { id: 2, title : "MySQL", description : "blabla", text: "un texte plus long" },
-    { id: 3,  title : "PHP", description : "blabla", text: "un texte plus long" },
-    { id: 4,title : "Pyhton", description : "blabla", text: "un texte plus long" },
-    { id: 5,title : "Docker", description : "blabla", text: "un texte plus long" },
+ { id: 1, title : "MongoDB", description : "blabla", text: "un texte plus long", 
+ img :  'logo.svg' },
+    { id: 2, title : "MySQL", description : "blabla", text: "un texte plus long",
+    img :  'logo.svg' },
+    { id: 3,  title : "PHP", description : "blabla", text: "un texte plus long",
+    img :  'logo.svg' },
+    { id: 4,title : "Pyhton", description : "blabla", text: "un texte plus long",
+    img :  'logo.svg' },
+    { id: 5,title : "Docker", description : "blabla", text: "un texte plus long",
+    img :  'logo.svg' },
 ]
 );
 
