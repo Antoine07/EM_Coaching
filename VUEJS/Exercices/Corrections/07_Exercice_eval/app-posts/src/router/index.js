@@ -22,6 +22,11 @@ const router = createRouter({
       path: '/post/:id',
       name: 'post',
       component: () => import('../components/Post.vue')
+    },
+    {
+      path: '/bitcoin',
+      name: 'bitcoin',
+      component: () => import('../components/Bitcoin.vue')
     }
   ]
 })

@@ -1,6 +1,6 @@
 <template>
 POST   
-<img :src="`${image}`" />
+<img :src="image" />
 </template>
 
 <script setup>
