@@ -4,9 +4,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview --port 5050"
+    "preview": "vite preview --port 5050",
+    "serve": "vue-cli-service serve"
   },
   "dependencies": {
+    "@vue/cli": "^5.0.4",
+    "@vue/cli-service": "^5.0.4",
     "vue": "^3.2.31",
     "vue-router": "^4.0.12"
   },

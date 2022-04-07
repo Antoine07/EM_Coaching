@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 
+console.log(process.env)
 </script>
 
 <template>

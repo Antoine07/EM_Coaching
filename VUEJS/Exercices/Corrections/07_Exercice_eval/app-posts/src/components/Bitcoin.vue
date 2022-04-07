@@ -10,6 +10,8 @@
 <script setup>
 import { ref } from 'vue'
 
+const { VUE_APP_API : url_api }  = process.env
+
 // data un état du composant qui peut changer. Pour assigner une valeur à data on écrit data.value = "une valeur"
 const data = ref(null)
 const error = ref(null)
@@ -17,7 +19,7 @@ const error = ref(null)
 // requete sur un fichier JSON sur Github 
 // fetch une fonction du navigateur qui permet de faire des requêtes asynchrones avec un API HTTP distante
 // then c'est résolue, la requête, et on peut chaîner avec un autre then pour modifier la source, par exemple ici en transformant celle-ci en JSON. Le catch va gérer les éventuelles erreurs.
-fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
+fetch(url_api)
   .then((res) => res.json())
   .then((json) => (data.value = json))
   .catch((err) => (error.value = err))
