@@ -24,13 +24,14 @@ for($i=0; $i < strlen($str); $i ++){
 print('nb de i ' . $count);
 echo PHP_EOL;
 
-$count = 1 ;
+
+// -------------------------
+
 $dejavu = [];
 $comptage = [];
 
 for($i=0; $i < strlen($str); $i++){
     $letter = $str[$i];
-    // penser à ré-initialiser le comptage
     $count = 0;
 
     // si on a déjà compter le nombre d'occurence de cette lettre on passe à l'itération suivante dans la première boucle dans l'objectif de ne pas recompter deux fois la même lettre
