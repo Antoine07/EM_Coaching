@@ -4,9 +4,9 @@
 
 1. Comptez le nombre de i dans la chaîne de caractères str.
 
-2. Comptez le nombre de lettres différentes dans la chaîne de caractères.
+2. Comptez le nombre de lettres différentes dans la chaîne de caractères. (à relire )
 
-3. Comptez chacune des lettres de la chaîne de caractères str.
+3. Inversez la chaîne de caractères en utilisant une boucle.
 
 indications : vous n'utiliserez que la fonction strlen et 
 */
